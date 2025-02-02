@@ -1,18 +1,24 @@
 {
   "name": "@repo/components",
   "version": "0.0.0",
-  "type": "module",
   "exports": {
-    "./hello": "./src/Hello.vue"
+    ".": "./src/index.ts"
   },
+  "types": "./src/vue-shim.d.ts",
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"**/*.ts\""
   },
   "devDependencies": {
+    "@quasar/vite-plugin": "^1.9.0",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "eslint": "^8.57.0",
+    "sass-embedded": "^1.83.4",
     "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.16",
+    "quasar": "^2.17.7"
   }
 }
