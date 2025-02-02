@@ -1,45 +1,33 @@
-# blog
+# `Turborepo` Vite starter
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a community-maintained example. If you experience a problem, please submit a pull request with a fix. GitHub Issues will be closed.
 
-## Recommended IDE Setup
+## Using this example
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+Run the following command:
 
 ```sh
-npm install
+npx create-turbo@latest -e with-vite
 ```
 
-### Compile and Hot-Reload for Development
+## What's inside?
 
-```sh
-npm run dev
-```
+This Turborepo includes the following packages and apps:
 
-### Type-Check, Compile and Minify for Production
+### Apps and Packages
 
-```sh
-npm run build
-```
+- `docs`: a vanilla [vite](https://vitejs.dev) ts app
+- `web`: another vanilla [vite](https://vitejs.dev) ts app
+- `@repo/ui`: a stub component & utility library shared by both `web` and `docs` applications
+- `@repo/eslint-config`: shared `eslint` configurations
+- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-```sh
-npm run test:unit
-```
+### Utilities
 
-### Lint with [ESLint](https://eslint.org/)
+This Turborepo has some additional tools already setup for you:
 
-```sh
-npm run lint
-```
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io) for code formatting
