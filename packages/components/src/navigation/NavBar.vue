@@ -9,10 +9,7 @@
 <script setup lang="ts">
 
 import { NavBarProps } from './lib'
-import { useRouter } from 'vue-router'
 
 const props = defineProps<NavBarProps>();
-const router = useRouter()
-
 
 </script>
