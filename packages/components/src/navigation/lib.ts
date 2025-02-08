@@ -1,10 +1,10 @@
-
 export interface NavBarProps {
-  entries: NavBarEntry[]
+  webpageTitle: string;
+  entries: NavBarEntry[];
 }
 
 export interface NavBarEntry {
-  name: string,
-  path: string,
-  slot?: string
+  name: string;
+  path: string;
+  slot?: string;
 }

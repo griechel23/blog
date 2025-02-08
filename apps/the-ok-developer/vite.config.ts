@@ -1,27 +1,26 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from "node:url";
 
-import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
-import { defineConfig } from 'vitest/config'
-import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
-
+import vue from "@vitejs/plugin-vue";
+import vueDevTools from "vite-plugin-vue-devtools";
+import { defineConfig } from "vitest/config";
+import { quasar, transformAssetUrls } from "@quasar/vite-plugin";
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue({
-      template: { transformAssetUrls }
+      template: { transformAssetUrls },
     }),
     quasar({
       sassVariables: fileURLToPath(
-        new URL('./src/quasar-variables.sass', import.meta.url)
-      )
+        new URL("./src/quasar-variables.sass", import.meta.url),
+      ),
     }),
     vueDevTools(),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-})
+});

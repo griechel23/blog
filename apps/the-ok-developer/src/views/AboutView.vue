@@ -1,19 +1,35 @@
 <template>
-  <div class="about">
-    <h1>About</h1>
-  </div>
-  <q-card>
-      As the website name implies, I consider myself a pretty ok developer. Not bad, pretty decent some might say, but
-      not a mythical 10x developer.
-  </q-card>
+  <q-page>
+    <q-header>About</q-header>
+    <AboutTabs
+      :tabs="tabs"
+      default-tab="blog"
+    ></AboutTabs>
+  </q-page>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script setup lang="ts">
+import { AboutEntry, AboutTabs } from '@repo/components'
+import AboutBlog from '@/pages/about/AboutBlog.vue'
+import AboutMe from '@/pages/about/AboutMe.vue'
+import OtherSites from '@/pages/about/OtherSites.vue'
+
+const tabs: AboutEntry[] = [
+  {
+    label: 'This Blog',
+    name: 'blog',
+    component: AboutBlog
+  },
+  {
+    label: 'Me',
+    name: 'me',
+    component: AboutMe
+  },
+  {
+    label: 'Other Sites',
+    name: 'links',
+    component: OtherSites
+  },
+]
+
+</script>
