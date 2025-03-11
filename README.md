@@ -1,33 +1,43 @@
-# `Turborepo` Vite starter
+# GarrenRiechel.com Monorepo
 
-This is a community-maintained example. If you experience a problem, please submit a pull request with a fix. GitHub Issues will be closed.
+This is a turbo monorepo hosting several websites.
 
-## Using this example
+### GarrenRiechel.com
 
-Run the following command:
+Top level website that routes to all my projects.
 
-```sh
-npx create-turbo@latest -e with-vite
-```
+[Website](https://garrenriechel.com)
 
-## What's inside?
+### The Ok Developer
+ 
+A technical blog for the average software engineer.
 
-This Turborepo includes the following packages and apps:
+[Website](https://theokdeveloper.com)
 
-### Apps and Packages
+### Local Host
 
-- `docs`: a vanilla [vite](https://vitejs.dev) ts app
-- `web`: another vanilla [vite](https://vitejs.dev) ts app
-- `@repo/ui`: a stub component & utility library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: shared `eslint` configurations
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+A local's perspective on community issues facing my tourist-heavy hometown of Breckenridge, Colorado.
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
+[Website](https://thelocalhost.blog)
 
-### Utilities
+## Project structure
 
-This Turborepo has some additional tools already setup for you:
+### `./apps`
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+Individual websites that can be run independently of each other. These apps contain mostly Vue files that are not shared
+between projects.
+
+### `/.packages`
+
+Shared code between apps. Contains Vue, Typescript, and build configurations that are held consistent across each project.
+Some shared components such as the [NavBar](packages/components/src/navigation/NavBar.vue) allow for website-specific customization.
+
+
+## Local development
+
+Bring up all projects by running `npm i && npm run dev` from this top level directory.
+
+## Contributing
+
+While this repository is not open for external pull requests, if you have any blog ideas or submissions, please feel free
+to reach out to me at garren@garrenriechel.com.

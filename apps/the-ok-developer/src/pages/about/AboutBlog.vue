@@ -21,7 +21,7 @@
             in a Turbo monorepo. Gotta make it more complicated than necessary to impress those HMs.
             It uses shared components to support two different blog applications. See the 'Other Links' section to see my other websites.
             <br/><br/>
-            The code for this blog can be found in this Github Repo: <>
+            The code for this blog can be found in this <a href="https://github.com/griechel23/blog/tree/main/apps/the-ok-developer">Github Repo</a>
           </q-card-section>
         </q-card>
       </div>
