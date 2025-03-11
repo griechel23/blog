@@ -1,6 +1,5 @@
 <template>
   <q-page>
-    <q-header>About</q-header>
     <AboutTabs
       :tabs="tabs"
       default-tab="blog"

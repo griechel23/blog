@@ -1,5 +1,4 @@
 export interface NavBarProps {
-  webpageTitle: string;
   entries: NavBarEntry[];
 }
 

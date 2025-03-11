@@ -4,6 +4,7 @@ import vue from "@vitejs/plugin-vue";
 import vueDevTools from "vite-plugin-vue-devtools";
 import { defineConfig } from "vitest/config";
 import { quasar, transformAssetUrls } from "@quasar/vite-plugin";
+import svgLoader from 'vite-svg-loader';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -11,6 +12,7 @@ export default defineConfig({
     vue({
       template: { transformAssetUrls },
     }),
+    svgLoader(),
     quasar({
       sassVariables: fileURLToPath(
         new URL("./src/quasar-variables.sass", import.meta.url),

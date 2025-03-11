@@ -18,7 +18,7 @@
             <br/><br/>
             No self-respecting Fullstack engineer should be using a website builder (except it's faster
             and less buggy), so this blog website is hand built using Vue, Vite, Typescript, and Quasar
-            in a Turbo monorepo. Ggotta make it more complicated than necessary to impress those HMs).
+            in a Turbo monorepo. Gotta make it more complicated than necessary to impress those HMs.
             It uses shared components to support two different blog applications. See the 'Other Links' section to see my other websites.
             <br/><br/>
             The code for this blog can be found in this Github Repo: <>

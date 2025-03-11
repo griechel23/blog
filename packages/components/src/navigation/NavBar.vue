@@ -1,38 +1,26 @@
 <template>
-  <q-header>
-    <span class="page-title">
-      {{ props.webpageTitle }}
-    </span>
-    <span class="header-entries">
-      <span class="right-content q-mr-md">
-        <template v-for="e in props.entries">
-          <router-link :to="e.path">{{ e.name }}</router-link>
-        </template>
-      </span>
-    </span>
+  <q-header class="bg-black text-grey-2" elevated>
+    <q-toolbar>
+      <q-toolbar-title>
+        <slot/>
+      </q-toolbar-title>
+      <div class="header-entries row items-center justify-end">
+        <q-tabs>
+          <template v-for="e in entries" :key="e.path">
+            <q-route-tab
+              :to="e.path"
+              :label="e.name"
+              class="text-grey-3 q-hover:text-green-4"
+            />
+          </template>
+        </q-tabs>
+      </div>
+    </q-toolbar>
   </q-header>
 </template>
 
-<style scoped>
-.page-title {
-
-}
-.header-entries {
-  display: flex;
-  justify-content: space-between; /* Ensures left and right alignment */
-  align-items: center;
-}
-
-.right-content {
-  margin-left: auto;
-}
-</style>
-
 <script setup lang="ts">
-
 import { NavBarProps } from './lib'
 
-const props = defineProps<NavBarProps>();
-console.log(JSON.stringify(props))
-
+defineProps<NavBarProps>();
 </script>
