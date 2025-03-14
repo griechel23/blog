@@ -3,6 +3,7 @@
       <q-tabs
         v-model="tab"
         class="text-teal"
+        vertical
       >
         <template v-for="t in tabs">
           <q-tab :name="t.name" :label="t.label"/>

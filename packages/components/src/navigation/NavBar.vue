@@ -1,5 +1,6 @@
 <template>
-  <q-header class="bg-black text-grey-2" elevated>
+  <q-header class="bg-black
+   text-grey-2" elevated>
     <q-toolbar>
       <q-toolbar-title>
         <slot/>
