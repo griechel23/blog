@@ -11,8 +11,12 @@
         vertical
         class="text-teal"
       >
-        <q-tab name="newVue" label="Setting Up Vue App" >3.14.25</q-tab>
-        <q-tab name="dynamicTabs" label="Dynamic Tab Content">2.20.25 <br/>foo bar baz</q-tab>
+        <q-tab name="dailyHabits" label="Daily Habits" class="q-mb-sm q-mt-sm"><div class="flex row items-center"> 3.14.25<q-chip size="sm" color="primary" outline>Non-Tech</q-chip></div></q-tab>
+        <q-separator/>
+        <q-tab name="newVue" label="Setting Up a Vue App" class="q-mb-sm q-mt-sm"><div class="flex row items-center"> 3.14.25<q-chip size="sm" color="accent" outline>Tech</q-chip></div></q-tab>
+        <q-separator/>
+        <q-tab name="dynamicTabs" label="Dynamic Tab Content" class="q-mb-sm q-mt-sm"><div class="flex row items-center"> 2.20.25 <q-chip size="sm" color="accent" outline>Tech</q-chip></div></q-tab>
+        <q-separator/>
       </q-tabs>
     </template>
 
@@ -25,6 +29,9 @@
         transition-prev="jump-up"
         transition-next="jump-up"
       >
+        <q-tab-panel name="dailyHabits">
+          <DailyHabits/>
+        </q-tab-panel>
         <q-tab-panel name="newVue">
           <NewVueProject/>
         </q-tab-panel>
@@ -47,6 +54,7 @@
 import { ref } from 'vue'
 import NewVueProject from '@/pages/blog/NewVueProject.vue'
 import DynamicVueTabs from '@/pages/blog/DynamicVueTabs.vue'
+import DailyHabits from '@/pages/blog/DailyHabits.vue'
 
 const tab = ref('')
 const splitterModel =  ref(20)

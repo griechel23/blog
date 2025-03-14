@@ -34,13 +34,13 @@ const navBarPropsRef: Ref<NavBarProps> = ref({
       path: '/'
     },
     {
+      name: 'Blog',
+      path: "/blog",
+    },
+    {
       name: 'About',
       path: "/about",
     },
-    {
-      name: 'Blog',
-      path: "/blog",
-    }
   ]
 })
 </script>

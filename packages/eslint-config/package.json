@@ -10,5 +10,9 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "plugins": [
+    "vue",
+    "@typescript-eslint"
+  ]
 }
