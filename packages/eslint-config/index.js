@@ -4,9 +4,10 @@ module.exports = {
   },
   parser: "@typescript-eslint/parser",
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
+    'plugin:@typescript-eslint/recommended',
+    'eslint:recommended',
+    'plugin:vue/vue3-recommended',
+    '@vue/eslint-config-prettier',
   ],
   plugins: ["@typescript-eslint"],
   parserOptions: {
