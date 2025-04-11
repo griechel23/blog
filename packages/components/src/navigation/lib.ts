@@ -1,5 +1,6 @@
 export interface NavBarProps {
   entries: NavBarEntry[];
+  websiteTitle?: string
 }
 
 export interface NavBarEntry {

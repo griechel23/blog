@@ -1,30 +1,31 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <q-layout view="lHh lpR fFf">
+    <NavBar
+      :entries="navBarPropsRef.entries"
+      :website-title="navBarPropsRef.websiteTitle"
+    >
+      <template #default>
+        <Icon class="icon q-mt-sm"/>
+      </template>
+    </NavBar>
+    <q-page-container>
+      <Websites class="q-mt-sm"/>
+    </q-page-container>
+  </q-layout>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script setup lang="ts">
+import Websites from '@/components/Websites.vue'
+import { NavBar, NavBarProps } from '@repo/components'
+import { Ref, ref } from 'vue'
+
+const navBarPropsRef: Ref<NavBarProps> = ref({
+  websiteTitle: "The Ok Developer",
+  entries: [
+    {
+      name: 'About',
+      path: "/about",
+    },
+  ]
+})
+</script>
