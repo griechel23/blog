@@ -1,9 +1,26 @@
 <template>
-  <q-card v-ripple class="website-card q-hoverable" tag="a" :href="link" :style="backgroundStyle">
+  <q-card
+    v-ripple
+    class="website-card q-hoverable"
+    tag="a"
+    :href="link"
+    :style="backgroundStyle"
+    @mouseenter="hovered = true"
+    @mouseleave="hovered = false"
+  >
     <span class="q-focus-helper"></span>
-    <q-card-section class="text-center">
-      {{ title}}
-    </q-card-section>
+      <q-card-section class="card-title text-h4">
+        {{ title }}
+      </q-card-section>
+    <transition name="reveal-fade">
+      <q-card v-if="hovered" class="revealed-card">
+        <q-card-section>
+          <div class="description-text">
+            {{ description }}
+          </div>
+        </q-card-section>
+      </q-card>
+    </transition>
   </q-card>
 </template>
 
@@ -16,21 +33,59 @@
   height: 100vh; /* Equivalent to 'window-height' */
   transition: box-shadow 0.2s ease-in-out; /* For hover effect */
   background-size: cover;
-  background-position: center center
+}
+.card-title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black; /* optional: ensure readability on background */
+}
+.revealed-card {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(50, 50, 50, 0.45); /* dark gray semi-transparent */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  z-index: 1;
+  backdrop-filter: blur(2px);
+}
+.description-text {
+  font-size: 1.125rem;
+  font-style: italic;
+  max-width: 30rem;
+}
+
+/* Fade & scale animation */
+.reveal-fade-enter-active,
+.reveal-fade-leave-active {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.reveal-fade-enter-from,
+.reveal-fade-leave-to {
+  opacity: 0;
+  transform: scale(0.85);
 }
 </style>
 
 <script setup lang="ts">
 
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 interface Props {
   title: string
   link: string
   image?: string
+  description: string
 }
 
 const props = defineProps<Props>()
+const hovered = ref(false)
 
 const backgroundStyle = computed(() => {
   let imageUrl;

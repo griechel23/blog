@@ -1,8 +1,26 @@
 <template>
     <div class="row">
-      <WebsiteCard class="col" title="Garren Riechel Photography" :link="websiteUrl" image="sf.jpg"/>
-      <WebsiteCard class="col" title="The Ok Developer" :link="okDevUrl" image="empire.jpg"/>
-      <WebsiteCard class="col" title="Local Host" :link="localHostUrl" image="breck.jpg"/>
+      <WebsiteCard
+        class="col"
+        title="Garren Riechel Photography"
+        description="People, places, and things"
+        :link="websiteUrl"
+        image="sf.jpg"
+      />
+      <WebsiteCard
+        class="col"
+        title="The Ok Developer"
+        description="Technical blog by a passable software engineer"
+        :link="okDevUrl"
+        image="empire.jpg"
+      />
+      <WebsiteCard
+        class="col"
+        title="Local Host"
+        description="Non-technical blog by a ski-town local"
+        :link="localHostUrl"
+        image="breck.jpg"
+      />
     </div>
 </template>
 

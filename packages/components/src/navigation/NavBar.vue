@@ -3,7 +3,7 @@
    text-grey-2" elevated>
     <q-toolbar>
       <q-toolbar-title>
-        <slot/>
+        <slot name="title"/>
       </q-toolbar-title>
       <div class="header-entries row items-center justify-end">
         <q-tabs>

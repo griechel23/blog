@@ -4,8 +4,10 @@
       :entries="navBarPropsRef.entries"
       :website-title="navBarPropsRef.websiteTitle"
     >
-      <template #default>
-        <Icon class="icon q-mt-sm"/>
+      <template #title>
+        <div class="text-h6">
+          GarrenRiechel.com
+        </div>
       </template>
     </NavBar>
     <q-page-container>
