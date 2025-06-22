@@ -44,7 +44,8 @@
 }
 .revealed-card {
   position: absolute;
-  inset: 0;
+  inset: 0% 0;
+  height: 100%;
   background-color: rgba(50, 50, 50, 0.45); /* dark gray semi-transparent */
   color: white;
   display: flex;

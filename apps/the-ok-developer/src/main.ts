@@ -5,6 +5,7 @@ import { Quasar } from "quasar";
 import "@quasar/extras/material-icons/material-icons.css";
 // Import Quasar css
 import "quasar/src/css/index.sass";
+import './assets/global.css'
 
 const app = createApp(App);
 

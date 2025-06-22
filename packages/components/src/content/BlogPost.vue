@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <h1 class="title">{{ title }}</h1>
-    <h2 class="subtitle">{{ subtitle }}</h2>
-    <slot name="content"/>
+    <h1 class="pageTitle">{{ title }}</h1>
+    <h2 class="pageSubtitle">{{ subtitle }}</h2>
+    <slot class="content" name="content"/>
   </div>
 </template>
 
@@ -18,14 +18,15 @@ defineProps<Props>()
 
 <style scoped>
 .container {
-  text-align: center;
   padding: 20px;
 }
-.title {
+.pageTitle {
+  text-align: center;
   font-size: 2em;
   margin-bottom: 10px;
 }
-.subtitle {
+.pageSubtitle {
+  text-align: center;
   font-size: 1.5em;
   color: gray;
   margin-bottom: 15px;
